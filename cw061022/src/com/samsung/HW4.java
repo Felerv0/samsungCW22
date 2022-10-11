@@ -12,10 +12,10 @@ public class HW4 {
         else if (a == 0 || (a < 0 && b <= 0))
             System.out.print("no such x");
         else if (a < 0) {
-            System.out.print(String.format(Locale.US, "%.1f", (double) b / a) + "<x<" + String.format(Locale.US, "%.1f", (double) -b / a));
+            System.out.printf(Locale.US, "%.1f<x<%.1f", (double) b / a, (double) -b / a);
         }
         else {
-            System.out.print("x<" + String.format(Locale.US, "%.1f", (double) b / a) + " or x>" + String.format(Locale.US, "%.1f", (double) -b / a));
+            System.out.printf(Locale.US, "x<%.1f or x>%.1f", (double) b / a, (double) -b / a);
         }
     }
 }
