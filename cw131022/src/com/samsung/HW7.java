@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class HW7 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt(), ind = 0, t = 0;
+        int n = sc.nextInt(), ind = 0, t, d;
         int[] arr = new int[n];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
@@ -14,12 +14,16 @@ public class HW7 {
             if (arr[i] < 0) {
                 t = arr[ind];
                 arr[ind] = arr[i];
-                arr[i] = t;
+                for (int j = ind + 1; j < i + 1; j++) {
+                    d = arr[j];
+                    arr[j] = t;
+                    t = d;
+                }
                 ind++;
             }
         }
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+        for (int i: arr) {
+            System.out.print(i + " ");
         }
     }
 }
