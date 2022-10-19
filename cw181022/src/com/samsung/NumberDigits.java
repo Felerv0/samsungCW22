@@ -26,4 +26,12 @@ public class NumberDigits {
         }
         return s;
     }
+
+    public static void binFraction(double x, int n) {
+        for (int i = 0; i < n; i++) {
+            x *= 2;
+            System.out.print((int) x);
+            x = x - (int) x;
+        }
+    }
 }
