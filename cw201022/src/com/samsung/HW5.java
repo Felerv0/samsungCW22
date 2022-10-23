@@ -21,9 +21,21 @@ public class HW5 {
         }
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                System.out.printf("###", A[i][j]);
+                System.out.print(format_3_symbols(A[i][j]));
             }
             System.out.println();
         }
+    }
+    public static String format_3_symbols(int a) {
+        int cnt = 0, b = a != 0 ? a : 1;
+        while (b != 0) {
+            b /= 10;
+            cnt++;
+        }
+        if (cnt == 1)
+            return "  " + a;
+        else if (cnt == 2)
+            return " " + a;
+        return a + "";
     }
 }
