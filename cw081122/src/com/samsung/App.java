@@ -25,5 +25,15 @@ public class App {
             System.out.println(arr[i]);
             System.out.println("-----------------------------------");
         }
+        System.out.println();
+
+        Pet a = new Pet("Шарик", "Егор", "Бульдог");
+        System.out.println(a);
+        for (int i = 1; i < 31; i++) {
+            a.addVisit(i + ".01.2023");
+        }
+        a.printVisits();
+        System.out.println();
+        a.printVisits(6);
     }
 }
