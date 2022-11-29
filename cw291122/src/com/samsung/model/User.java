@@ -43,4 +43,10 @@ public abstract class User {
     public String getPhone() {
         return phone;
     }
+
+    public String getFullName() {
+        StringBuilder builder = new StringBuilder()
+                .append(getSurname()).append(" ").append(getName()).append(" ").append(getPatronymic());
+        return builder.toString();
+    }
 }

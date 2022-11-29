@@ -26,15 +26,25 @@ public class Student extends User implements Printer {
 
     public void sayHello() {
         StringBuilder builder = new StringBuilder()
-                .append("Привет! Я студен, мое имя ")
-                .append(getSurname()).append(" ")
-                .append(getName()).append(" ")
-                .append(getPatronymic()).append("!");
+                .append("Привет! Я студент, моё имя ").append(super.getFullName()).append("!");
         System.out.println(builder.toString());
     }
 
     @Override
-    public void printInfoToConsoleSuperKpacuBo() {
+    public String getFullName() {
+        StringBuilder builder = new StringBuilder()
+                .append(super.getFullName()).append(" (").append(getGroup()).append(")");
+        return builder.toString();
+    }
 
+    @Override
+    public void printInfoToConsoleSuperKpacuBo() {
+        StringBuilder builder = new StringBuilder()
+                .append("Преподаватель\nФамилия: ").append(getSurname())
+                .append("\nИмя: ").append(getName())
+                .append("\nОтчество: ").append(getPatronymic())
+                .append("\nКонтактный телефон: ").append(getPhone())
+                .append("\nГруппа: ").append(getGroup());
+        System.out.println(builder.toString());
     }
 }

@@ -26,16 +26,26 @@ public class Teacher extends User implements Printer {
 
     public void sayHello() {
         StringBuilder builder = new StringBuilder()
-                .append("Здравствуйте! Я преподаватель, мое имя ")
-                .append(getName()).append(" ")
-                .append(getSurname()).append(" ")
-                .append(getPatronymic()).append("! ")
+                .append("Здравствуйте! Я преподаватель, моё имя ").append(super.getFullName()).append("! ")
                 .append("Я преподаю предмет \"").append(getSubject()).append("\"!");
         System.out.println(builder.toString());
     }
 
     @Override
+    public String getFullName() {
+        StringBuilder builder = new StringBuilder()
+                .append(super.getFullName()).append(" (").append(getSubject()).append(")");
+        return builder.toString();
+    }
+
+    @Override
     public void printInfoToConsoleSuperKpacuBo() {
-        System.out.println("");
+        StringBuilder builder = new StringBuilder()
+                .append("Преподаватель\nФамилия: ").append(getSurname())
+                .append("\nИмя: ").append(getName())
+                .append("\nОтчество: ").append(getPatronymic())
+                .append("\nКонтактный телефон: ").append(getPhone())
+                .append("\nПредмет: ").append(getSubject());
+        System.out.println(builder.toString());
     }
 }
