@@ -40,7 +40,7 @@ public class Student extends User implements Printer {
     @Override
     public void printInfoToConsoleSuperKpacuBo() {
         StringBuilder builder = new StringBuilder()
-                .append("Преподаватель\nФамилия: ").append(getSurname())
+                .append("Студент\nФамилия: ").append(getSurname())
                 .append("\nИмя: ").append(getName())
                 .append("\nОтчество: ").append(getPatronymic())
                 .append("\nКонтактный телефон: ").append(getPhone())

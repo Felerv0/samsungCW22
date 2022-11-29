@@ -20,10 +20,13 @@ public class DemoService {
         s2.sayHello();
         Student s3 = new Student("Майкл", "Джексон", "Валерьевич", "123456789", "Группа Рокеров");
         s3.sayHello();
+        s3.printInfoToConsoleSuperKpacuBo();
         Teacher t1 = new Teacher("Марина", "Абророва", "Ивановна", "Немецкий язык");
         t1.sayHello();
         Teacher t2 = new Teacher(t1);
         t2.sayHello();
+        Teacher t3 = new Teacher("Акакий", "Акакиев", "Акакиевич", "1234151511", "Математика");
+        t3.printInfoToConsoleSuperKpacuBo();
 
         System.out.println("\nДемонстрация работы класса университет");
         Teacher[] t = new Teacher[6];
